@@ -64,6 +64,8 @@
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
     --global-input-focus-borderColor: var(--global-color-alpha);
     --global-input-boxShadow: var(--global-color-alpha-x-transparent);
+    --global-input-checkbox-borderRadius: 3px;
+    --global-input-radio-borderRadius: 100%;
 }
 
 /*------------------------------------*\
@@ -632,6 +634,56 @@ input::placeholder {
 
 .c-option {
     margin-right: var(--global-whitespace-sm);
+}
+
+.c-custom-option {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.c-custom-option__symbol {
+    opacity: 0;
+    display: block;
+}
+
+.c-custom-option__fake-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--global-baseline) * 2);
+    height: calc(var(--global-baseline) * 2);;
+    border: var(--global-borderWidth) solid var(--global-input-borderColor);
+    margin-right: var(--global-baseline);
+}
+
+.c-custom-option__fake-input--checkbox {
+    border-radius: var(--global-input-checkbox-borderRadius);
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
+    width: 10px;
+    height: 10px;
+    fill: var(--global-color-alpha);
+}
+
+.c-custom-option__fake-input--radio {
+    border-radius: var(--global-input-radio-borderRadius);
+}
+
+.c-custom-option__fake-input--radio .c-custom-option__symbol {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--global-input-radio-borderRadius);
+    background-color: var(--global-color-alpha);
+}
+
+.c-option--hidden:checked + .c-custom-option {
+    
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
+    opacity: 1;
+    fill: var(--global-color-alpha);
 }
 
 /*
