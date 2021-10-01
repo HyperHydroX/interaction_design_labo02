@@ -100,12 +100,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: var(--global-page-backgroundColor);
-  }
-}
-
 *,
 *:before,
 *:after {
