@@ -71,6 +71,8 @@
   --global-input-transition-time: 0.1s;
   --global-input-transition: var(--global-input-transition-state)
     var(--global-input-transition-time);
+  --global-input-border: var(--global-borderWidth) solid
+    var(--global-input-borderColor);
 }
 
 /*------------------------------------*\
@@ -787,6 +789,45 @@ input::placeholder {
   margin: 0 0 12px;
 }
 
+.c-toggle-list__item + .c-toggle-list__item {
+  padding-top: 8px;
+}
+
+.c-custom-toggle--inverted {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* custom select input */
+
+.c-custom-select {
+  display: block;
+}
+
+.c-custom-select__input {
+  width: 100%;
+  height: 32px;
+  color: var(--global-input-color);
+  border: var(--global-input-border);
+  border-radius: 3px;
+}
+
+.c-custom-select__input:focus,
+.c-custom-select__input:active {
+  box-shadow: var(--global-input-focus-boxShadow);
+  border-color: var(--global-color-alpha);
+}
+
+.c-custom-select__symbol {
+  pointer-events: none;
+  height: 34px;
+  width: px;
+  position: absolute;
+  right: -7px;
+  bottom: -1px;
+  fill: var(--global-input-color);
+}
+
 /*
     Component: Label
     ---
@@ -798,7 +839,7 @@ input::placeholder {
   font-size: 14px;
   padding-bottom: var(--global-whitespace-xs);
   line-height: calc(var(--global-baseline) * 2);
-  color: var(--global-color-neutral-xx-dark);
+  color: var(--global-input-color);
 }
 
 .c-label--option {
