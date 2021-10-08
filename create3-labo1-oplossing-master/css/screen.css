@@ -83,6 +83,18 @@
 #GENERIC
 \*------------------------------------*/
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: var(--global-page-backgroundColor);
+    color: var(--color-neutral-xxxx-dark);
+  }
+
+  html {
+    color: var(--global-page-color);
+    background-color: var(--global-page-backgroundColor);
+  }
+}
+
 /*
     Generic: Page
     ---
@@ -800,6 +812,8 @@ input::placeholder {
 .c-custom-toggle--inverted {
   flex-direction: row-reverse;
   justify-content: flex-end;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* custom select input */
@@ -825,7 +839,6 @@ input::placeholder {
 .c-custom-select__symbol {
   pointer-events: none;
   height: 34px;
-  width: px;
   position: absolute;
   right: -7px;
   bottom: -1px;
